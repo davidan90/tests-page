@@ -4,10 +4,10 @@
       <router-link to="/home">{{ $t("home.title") }}</router-link>
     </span>
     <span>
-      <router-link to="/">Nosotros</router-link>
+      <router-link to="/about">{{ $t("about.title") }}</router-link>
     </span>
     <span>
-      <router-link to="/">Contacto</router-link>
+      <router-link to="/contact">{{ $t("contact.title") }}</router-link>
     </span>
   </nav>
 </template>

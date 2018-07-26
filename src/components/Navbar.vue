@@ -1,23 +1,3 @@
-<template>
-  <nav id="navbar">
-    <span>
-      <router-link to="/home">{{ $t("home.title") }}</router-link>
-    </span>
-    <span>
-      <router-link to="/about">{{ $t("about.title") }}</router-link>
-    </span>
-    <span>
-      <router-link to="/contact">{{ $t("contact.title") }}</router-link>
-    </span>
-  </nav>
-</template>
-
-<script>
-export default {
-  name: "NavBar"
-};
-</script>
-
 <style lang="scss" scoped>
 @import "../assets/styles/responsive";
 
@@ -38,3 +18,23 @@ export default {
   }
 }
 </style>
+
+<template>
+  <nav id="navbar">
+    <span>
+      <router-link to="/home">{{ $t("home.title") }}</router-link>
+    </span>
+    <span>
+      <router-link to="/about">{{ $t("about.title") }}</router-link>
+    </span>
+    <span>
+      <router-link to="/contact">{{ $t("contact.title") }}</router-link>
+    </span>
+  </nav>
+</template>
+
+<script>
+export default {
+  name: "NavBar"
+};
+</script>

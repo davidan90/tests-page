@@ -1,8 +1,8 @@
-import { Home } from "../../views";
+import { Contact } from "../../views";
 
 export const contactRoutes = [
   {
     path: "/contact",
-    component: Home
+    component: Contact
   }
 ];

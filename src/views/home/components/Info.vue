@@ -1,5 +1,6 @@
 <style lang="scss" scoped>
 @import "../../../assets/styles/responsive";
+@import "../../../assets/styles/colors";
 @import "../../../assets/styles/mixins";
 
 #info-home {
@@ -7,6 +8,14 @@
 
   @media #{$screen-s} {
     @include flex(column, center, inherit);
+  }
+
+  @media #{$screen-m}, #{$screen-l} {
+    p {
+      column-count: 2;
+      column-gap: 4rem;
+      column-rule: 1px solid $black-color;
+    }
   }
 }
 </style>
@@ -22,6 +31,6 @@
 
 <script>
 export default {
-  name: "Info"
+  name: "InfoHome"
 };
 </script>

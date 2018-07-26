@@ -22,7 +22,7 @@
     "test:overwrite:snap": "npm test -- -u",
     "coverage:open:mac": "open coverage/lcov-report/index.html",
     "coverage:open:linux": "xdg-open coverage/lcov-report/index.html",
-    "precommit": "npm run lint && npm run lint:css"
+    "precommit": "npm run lint && npm run lint:css && npm run test"
   },
   "dependencies": {
     "vue": "^2.5.11",

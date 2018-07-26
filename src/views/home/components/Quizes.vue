@@ -19,6 +19,7 @@
     <QuizBox v-for="(quiz, index) in quizes" :key="`quiz_title_${index}`" :quiz="quiz"/>
   </article>
 </template>
+
 <script>
 import QuizBox from "./QuizBox";
 

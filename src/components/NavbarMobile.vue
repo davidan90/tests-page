@@ -44,13 +44,13 @@
     <span v-if="isMenuShow" class="close" @click="toogleMenu">{{ $t("app.close") }}</span>
     <span v-else class="title" @click="toogleMenu">{{ $t("app.menu") }}</span>
     <nav>
-      <span>
+      <span @click="toogleMenu">
         <router-link to="/home">{{ $t("home.title") }}</router-link>
       </span>
-      <span>
+      <span @click="toogleMenu">
         <router-link to="/about">Nosotros</router-link>
       </span>
-      <span>
+      <span @click="toogleMenu">
         <router-link to="/contact">Contacto</router-link>
       </span>
     </nav>

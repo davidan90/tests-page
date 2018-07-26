@@ -35,6 +35,7 @@ export default {
     section {
       padding: 1rem;
     }
+
     @media #{$screen-s} {
       padding-top: 60px;
     }

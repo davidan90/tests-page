@@ -8,6 +8,7 @@
 
   .section-inner {
     @include flex(column, center, space-between);
+
     padding: 0 1rem;
 
     .links {

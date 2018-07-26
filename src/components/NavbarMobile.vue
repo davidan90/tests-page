@@ -19,8 +19,8 @@
 
       background-color: $white-color;
       height: 100vh;
-      position: absolute;
       left: 0;
+      position: absolute;
       top: 65px;
       width: 100vw;
 
@@ -29,6 +29,7 @@
       }
     }
   }
+
   @media #{$screen-m}, #{$screen-l} {
     display: none;
   }

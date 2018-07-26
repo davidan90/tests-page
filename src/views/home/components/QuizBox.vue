@@ -9,6 +9,7 @@
 
   &.intelligence {
     background-color: $blue-quiz-color;
+
     &:hover {
       background-color: $blue-quiz-hover-color;
     }
@@ -16,6 +17,7 @@
 
   &.verbal {
     background-color: $green-quiz-color;
+
     &:hover {
       background-color: $green-quiz-hover-color;
     }
@@ -23,6 +25,7 @@
 
   &.numerical {
     background-color: $red-quiz-color;
+
     &:hover {
       background-color: $red-quiz-hover-color;
     }
@@ -30,6 +33,7 @@
 
   &.perceptive {
     background-color: $pink-quiz-color;
+
     &:hover {
       background-color: $pink-quiz-hover-color;
     }
@@ -37,6 +41,7 @@
 
   &.memory {
     background-color: $yellow-quiz-color;
+
     &:hover {
       background-color: $yellow-quiz-hover-color;
     }

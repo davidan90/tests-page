@@ -4,11 +4,12 @@
 @import "../assets/styles/colors";
 
 #main-header {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.75);
   padding: 0.5rem 0;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
 
   .section-inner {
     @include flex(row, center, space-between);
+
     padding: 0 1rem;
 
     picture {

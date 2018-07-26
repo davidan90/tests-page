@@ -1,10 +1,9 @@
 <style lang="scss" scoped>
 @import "../../../assets/styles/colors";
+@import "../../../assets/styles/mixins";
 
 .quiz-box {
-  cursor: pointer;
   margin: 0.5rem 0;
-  text-align: center;
   width: 100%;
 
   &.intelligence {
@@ -46,13 +45,53 @@
       background-color: $yellow-quiz-hover-color;
     }
   }
+
+  .tests-title {
+    @include flex(row, center, center);
+
+    cursor: pointer;
+    height: 3rem;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .tests-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+
+    &.active {
+      max-height: 100vh;
+      transition: max-height 0.7s ease-in;
+    }
+
+    .test {
+      padding: 0 0.5rem;
+      text-align: left;
+
+      h4 {
+        display: inline-block;
+      }
+    }
+  }
 }
 </style>
 
 <template>
   <div v-if="quiz" :class="quiz.className" class="quiz-box">
-    <h3>{{ title }}</h3>
+    <div class="tests-title" @click="toogleContainer">
+      <h3>{{ title }}</h3>
+    </div>
+    <div :class="{active: isContainerShow}" class="tests-container">
+      <div v-for="test in quiz.tests" :key="test.id" class="test">
+        <h4>{{ test.title }}</h4>
+      </div>
+    </div>
   </div>
+
 </template>
 <script>
 export default {
@@ -63,12 +102,22 @@ export default {
       type: Object
     }
   },
+  data() {
+    return {
+      isContainerShow: false
+    };
+  },
   computed: {
     title() {
       const quiz = this.quiz.className;
       const locale = this.$i18n.locale;
       const messages = this.$i18n.messages[locale];
       return quiz ? messages.home.quizes.titles[quiz] : "";
+    }
+  },
+  methods: {
+    toogleContainer() {
+      this.isContainerShow = !this.isContainerShow;
     }
   }
 };

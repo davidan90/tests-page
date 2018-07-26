@@ -15,7 +15,7 @@
 
   &.active {
     nav {
-      @include flex(column, flex-start, inherit);
+      @include flex(column, center, inherit);
 
       background-color: $white-color;
       height: 100vh;
@@ -25,7 +25,10 @@
       width: 100vw;
 
       span {
-        padding: 0.5rem 0 0 0.5rem;
+        border-bottom: 1px solid;
+        padding: 1rem 0;
+        text-align: center;
+        width: 100%;
       }
     }
   }
@@ -45,10 +48,10 @@
         <router-link to="/home">{{ $t("home.title") }}</router-link>
       </span>
       <span>
-        <router-link to="/">Nosotros</router-link>
+        <router-link to="/about">Nosotros</router-link>
       </span>
       <span>
-        <router-link to="/">Contacto</router-link>
+        <router-link to="/contact">Contacto</router-link>
       </span>
     </nav>
   </div>

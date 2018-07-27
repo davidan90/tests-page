@@ -13,7 +13,7 @@
 <template>
   <article id="info-contact">
     <h2>{{ $t("contact.info.title") }}</h2>
-    <p>{{ $t("contact.info.description") }}</p>
+    <p v-html="$t('contact.info.description')" />
     <picture>
       <img src="../../../assets/img/semantia_logo.png">
     </picture>

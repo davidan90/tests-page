@@ -1,25 +1,3 @@
-<template>
-  <div id="app">
-    <Header />
-    <main class="main-container">
-      <router-view/>
-    </main>
-    <Footer />
-  </div>
-</template>
-
-<script>
-import { Header, Footer } from "./components";
-
-export default {
-  name: "App",
-  components: {
-    Header,
-    Footer
-  }
-};
-</script>
-
 <style lang="scss">
 @import "./assets/styles/global";
 @import "./assets/styles/colors";
@@ -47,3 +25,47 @@ export default {
   }
 }
 </style>
+
+<template>
+  <div class="main-container">
+    <div id="app">
+      <Header />
+      <main class="main-container">
+        <router-view/>
+      </main>
+      <Footer />
+    </div>
+    <Modal v-if="isModalShow">
+      <ModalContent v-if="hasModalContent"/>
+    </Modal>
+  </div>
+</template>
+
+<script>
+import Vue from "vue";
+import { Header, Footer, Modal } from "./components";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+    Modal
+  },
+  computed: {
+    isModalShow() {
+      return this.$store.getters.getModalShow;
+    },
+    hasModalContent() {
+      const content = this.$store.getters.getModalContent;
+      this.registryVueComponent(content);
+      return content ? true : false;
+    }
+  },
+  methods: {
+    registryVueComponent(component) {
+      Vue.component("ModalContent", Vue.extend(component));
+    }
+  }
+};
+</script>

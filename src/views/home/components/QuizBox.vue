@@ -86,7 +86,7 @@
       <h3>{{ title }}</h3>
     </div>
     <div :class="{active: isContainerShow}" class="tests-container">
-      <div v-for="test in quiz.tests" :key="test.id" class="test">
+      <div v-for="test in quiz.tests" :key="test.id" class="test" @click="openModal(test)">
         <h4>{{ test.title }}</h4>
       </div>
     </div>
@@ -118,6 +118,32 @@ export default {
   methods: {
     toogleContainer() {
       this.isContainerShow = !this.isContainerShow;
+    },
+    openModal(test) {
+      const content = this.createModalContent(test);
+      this.$store.dispatch("setModalContent", content);
+      this.$store.dispatch("showModal");
+    },
+    createModalContent(test) {
+      return {
+        name: "ModalContent",
+        template: `
+          <div>
+            <span>${test.id}</span>
+          </div>
+        `,
+        data() {
+          return {
+            styles: {
+              content: `
+              background-color: white;
+              height: 50px;
+              width: 100px;
+            `
+            }
+          };
+        }
+      };
     }
   }
 };
